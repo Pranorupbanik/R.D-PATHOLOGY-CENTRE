@@ -1,0 +1,1018 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>R.D. Pathology Collection Centre</title>
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    font-family:Arial,Helvetica,sans-serif;
+    background:#f7fbfa;
+    color:#123238;
+    line-height:1.6;
+}
+
+a{
+    text-decoration:none;
+    color:inherit;
+}
+
+.container{
+    width:90%;
+    max-width:1150px;
+    margin:auto;
+}
+
+/* NAVBAR */
+
+header{
+    position:sticky;
+    top:0;
+    z-index:1000;
+    background:rgba(255,255,255,.96);
+    backdrop-filter:blur(12px);
+    border-bottom:1px solid #dcebea;
+}
+
+nav{
+    min-height:75px;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:12px;
+    font-weight:bold;
+}
+
+.logo-box{
+    width:45px;
+    height:45px;
+    border-radius:14px;
+    background:#087f83;
+    color:white;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-weight:bold;
+}
+
+.logo small{
+    display:block;
+    color:#64787b;
+    font-size:10px;
+}
+
+.nav-links{
+    display:flex;
+    gap:25px;
+    align-items:center;
+}
+
+.nav-links a{
+    font-size:14px;
+    font-weight:bold;
+    color:#50676a;
+}
+
+.nav-links a:hover{
+    color:#087f83;
+}
+
+.call-btn{
+    background:#087f83;
+    color:white !important;
+    padding:11px 18px;
+    border-radius:25px;
+}
+
+/* HERO */
+
+.hero{
+    padding:85px 0 70px;
+}
+
+.hero-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:60px;
+    align-items:center;
+}
+
+.badge{
+    display:inline-block;
+    background:#e5f7f4;
+    color:#087f83;
+    padding:8px 15px;
+    border-radius:30px;
+    font-weight:bold;
+    font-size:13px;
+    margin-bottom:20px;
+}
+
+h1{
+    font-size:clamp(42px,6vw,70px);
+    line-height:1.05;
+    letter-spacing:-3px;
+    margin-bottom:22px;
+}
+
+.highlight{
+    color:#087f83;
+}
+
+.hero p{
+    color:#637477;
+    font-size:18px;
+    max-width:600px;
+    margin-bottom:30px;
+}
+
+.buttons{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 20px;
+    border-radius:15px;
+    font-weight:bold;
+    display:inline-block;
+    transition:.2s;
+}
+
+.primary{
+    background:#087f83;
+    color:white;
+}
+
+.primary:hover{
+    transform:translateY(-3px);
+}
+
+.secondary{
+    background:white;
+    border:1px solid #d6e5e3;
+}
+
+.secondary:hover{
+    transform:translateY(-3px);
+}
+
+.hero-image{
+    position:relative;
+}
+
+.hero-image img{
+    width:100%;
+    display:block;
+    border-radius:30px;
+    box-shadow:0 25px 60px rgba(15,60,60,.15);
+}
+
+.rating{
+    position:absolute;
+    bottom:20px;
+    left:-20px;
+    background:white;
+    padding:15px 20px;
+    border-radius:18px;
+    box-shadow:0 15px 40px rgba(0,0,0,.15);
+}
+
+.rating strong{
+    display:block;
+}
+
+/* STATS */
+
+.stats{
+    background:white;
+    border-top:1px solid #dcebea;
+    border-bottom:1px solid #dcebea;
+}
+
+.stats-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+}
+
+.stat{
+    text-align:center;
+    padding:25px;
+    border-right:1px solid #dcebea;
+}
+
+.stat:last-child{
+    border-right:none;
+}
+
+.stat strong{
+    display:block;
+    font-size:24px;
+    color:#087f83;
+}
+
+.stat span{
+    font-size:13px;
+    color:#6a7b7d;
+}
+
+/* SECTIONS */
+
+section{
+    padding:90px 0;
+}
+
+.section-title{
+    text-align:center;
+    margin-bottom:45px;
+}
+
+.section-title span{
+    color:#087f83;
+    font-weight:bold;
+    font-size:13px;
+    text-transform:uppercase;
+    letter-spacing:2px;
+}
+
+.section-title h2{
+    font-size:45px;
+    margin-top:8px;
+}
+
+/* SERVICES */
+
+.services{
+    background:#073e41;
+    color:white;
+}
+
+.services .section-title span{
+    color:#7bded7;
+}
+
+.service-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:18px;
+}
+
+.service{
+    padding:30px;
+    border:1px solid rgba(255,255,255,.12);
+    background:rgba(255,255,255,.05);
+    border-radius:25px;
+    transition:.25s;
+}
+
+.service:hover{
+    transform:translateY(-7px);
+    background:rgba(255,255,255,.09);
+}
+
+.icon{
+    font-size:30px;
+    margin-bottom:20px;
+}
+
+.service h3{
+    margin-bottom:8px;
+}
+
+.service p{
+    color:#b7d1d0;
+}
+
+/* ABOUT */
+
+.info-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:25px;
+}
+
+.card{
+    background:white;
+    padding:30px;
+    border-radius:27px;
+    border:1px solid #dcebea;
+    box-shadow:0 10px 30px rgba(0,0,0,.04);
+}
+
+.info{
+    display:flex;
+    gap:15px;
+    padding:18px 0;
+    border-bottom:1px solid #e1eceb;
+}
+
+.info:last-child{
+    border-bottom:none;
+}
+
+.info-icon{
+    width:43px;
+    height:43px;
+    background:#e6f7f4;
+    color:#087f83;
+    border-radius:13px;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    flex-shrink:0;
+}
+
+.info b{
+    display:block;
+}
+
+.info span{
+    color:#657578;
+    font-size:14px;
+}
+
+/* REVIEW */
+
+.review{
+    background:linear-gradient(140deg,#e9f8f5,#ffffff);
+}
+
+.stars{
+    color:#e5a914;
+    font-size:24px;
+    letter-spacing:3px;
+}
+
+.quote{
+    font-size:25px;
+    font-weight:bold;
+    margin:18px 0;
+}
+
+/* GALLERY */
+
+.gallery{
+    display:grid;
+    grid-template-columns:1.2fr .8fr;
+    gap:18px;
+}
+
+.gallery img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    border-radius:25px;
+    border:1px solid #dcebea;
+    display:block;
+}
+
+.gallery-main{
+    min-height:500px;
+}
+
+.gallery-side{
+    display:grid;
+    grid-template-rows:1fr 1fr;
+    gap:18px;
+}
+
+/* CTA */
+
+.cta{
+    background:#087f83;
+    color:white;
+    border-radius:30px;
+    padding:40px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    gap:25px;
+}
+
+.cta h2{
+    font-size:35px;
+}
+
+.cta p{
+    color:#c8efec;
+}
+
+.cta .btn{
+    background:white;
+    color:#087f83;
+}
+
+/* FOOTER */
+
+footer{
+    background:#062f31;
+    color:#b7d1d0;
+    padding:40px 0 80px;
+}
+
+footer strong{
+    color:white;
+}
+
+/* MOBILE BUTTONS */
+
+.mobile-buttons{
+    display:none;
+}
+
+/* MOBILE */
+
+@media(max-width:800px){
+
+    .nav-links{
+        display:none;
+    }
+
+    .hero{
+        padding:55px 0;
+    }
+
+    .hero-grid{
+        grid-template-columns:1fr;
+        gap:40px;
+    }
+
+    h1{
+        font-size:48px;
+    }
+
+    .hero p{
+        font-size:16px;
+    }
+
+    .rating{
+        left:15px;
+    }
+
+    .stats-grid{
+        grid-template-columns:1fr;
+    }
+
+    .stat{
+        border-right:none;
+        border-bottom:1px solid #dcebea;
+    }
+
+    .stat:last-child{
+        border-bottom:none;
+    }
+
+    .service-grid{
+        grid-template-columns:1fr;
+    }
+
+    .info-grid{
+        grid-template-columns:1fr;
+    }
+
+    .section-title h2{
+        font-size:35px;
+    }
+
+    .gallery{
+        grid-template-columns:1fr;
+    }
+
+    .gallery-main{
+        min-height:0;
+    }
+
+    .gallery-side{
+        grid-template-columns:1fr 1fr;
+        grid-template-rows:none;
+    }
+
+    .cta{
+        display:block;
+    }
+
+    .cta .buttons{
+        margin-top:20px;
+    }
+
+    .mobile-buttons{
+        display:flex;
+        position:fixed;
+        bottom:12px;
+        left:12px;
+        right:12px;
+        z-index:999;
+        background:white;
+        padding:8px;
+        border-radius:18px;
+        box-shadow:0 10px 35px rgba(0,0,0,.18);
+        gap:8px;
+    }
+
+    .mobile-buttons a{
+        flex:1;
+        text-align:center;
+        padding:10px;
+        border-radius:12px;
+        font-weight:bold;
+        color:#087f83;
+    }
+
+    .mobile-buttons a:first-child{
+        background:#087f83;
+        color:white;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header>
+<div class="container">
+<nav>
+
+<a href="#home" class="logo">
+
+<div class="logo-box">RD</div>
+
+<div>
+R.D. PATHOLOGY
+<small>COLLECTION CENTRE</small>
+</div>
+
+</a>
+
+<div class="nav-links">
+<a href="#services">Services</a>
+<a href="#about">About</a>
+<a href="#reviews">Reviews</a>
+<a href="#gallery">Photos</a>
+
+<a class="call-btn" href="tel:09051583904">
+Call Centre
+</a>
+
+</div>
+
+</nav>
+</div>
+</header>
+
+
+<main>
+
+<!-- HERO -->
+
+<section class="hero" id="home">
+
+<div class="container hero-grid">
+
+<div>
+
+<div class="badge">
+● Collection Centre · Dum Dum
+</div>
+
+<h1>
+Reliable sample collection,
+<span class="highlight">close to home.</span>
+</h1>
+
+<p>
+R.D. Pathology Collection Centre provides blood testing and sample collection services from its local centre in South Dumdum, West Bengal.
+</p>
+
+<div class="buttons">
+
+<a class="btn primary" href="tel:09051583904">
+☎ Call 090515 83904
+</a>
+
+<a class="btn secondary"
+href="https://www.google.com/maps/search/?api=1&query=451%20Purba%20Sinthi%2C%20Dum%20Dum%2C%20South%20Dumdum%2C%20West%20Bengal%20700030"
+target="_blank">
+📍 Get Directions
+</a>
+
+</div>
+
+</div>
+
+
+<div class="hero-image">
+
+<!-- EXACT FILE NAME FROM YOUR GITHUB -->
+
+<img src="storefront.jpg"
+alt="R.D. Pathology Collection Centre">
+
+<div class="rating">
+<strong>⭐ 5.0 Rating</strong>
+<small>Based on supplied listing</small>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- STATS -->
+
+<div class="stats">
+
+<div class="container stats-grid">
+
+<div class="stat">
+<strong>5.0 ★</strong>
+<span>Listing rating</span>
+</div>
+
+<div class="stat">
+<strong>11 PM</strong>
+<span>Closing time shown</span>
+</div>
+
+<div class="stat">
+<strong>Dum Dum</strong>
+<span>South Dumdum, West Bengal</span>
+</div>
+
+</div>
+
+</div>
+
+
+<!-- SERVICES -->
+
+<section class="services" id="services">
+
+<div class="container">
+
+<div class="section-title">
+<span>What we do</span>
+<h2>Simple. Local. Focused.</h2>
+</div>
+
+<div class="service-grid">
+
+<div class="service">
+
+<div class="icon">🩸</div>
+
+<h3>Blood Testing</h3>
+
+<p>
+Blood sample collection service at the R.D. Pathology Collection Centre.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">🧪</div>
+
+<h3>Sample Collection</h3>
+
+<p>
+A dedicated local collection point for pathology-related samples.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="icon">📍</div>
+
+<h3>Easy to Find</h3>
+
+<p>
+Located at 451, Purba Sinthi, Dum Dum, South Dumdum, West Bengal 700030.
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- ABOUT -->
+
+<section id="about">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Centre Information</span>
+
+<h2>Everything you need before you visit.</h2>
+
+</div>
+
+
+<div class="info-grid">
+
+
+<div class="card">
+
+<div class="info">
+
+<div class="info-icon">📍</div>
+
+<div>
+
+<b>Address</b>
+
+<span>
+451, Purba Sinthi, Dum Dum,<br>
+South Dumdum, West Bengal 700030
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="info-icon">☎</div>
+
+<div>
+
+<b>Phone</b>
+
+<span>
+090515 83904
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="info-icon">◷</div>
+
+<div>
+
+<b>Hours shown</b>
+
+<span>
+Open · Closes 11 PM
+</span>
+
+</div>
+
+</div>
+
+
+<div class="info">
+
+<div class="info-icon">★</div>
+
+<div>
+
+<b>Listing rating</b>
+
+<span>
+5.0 from the supplied listing
+</span>
+
+</div>
+
+</div>
+
+</div>
+
+
+<!-- REVIEW -->
+
+<div class="card review" id="reviews">
+
+<div class="stars">
+★★★★★
+</div>
+
+<div class="quote">
+“Nice behaviour staff.”
+</div>
+
+<p>
+Review displayed in the supplied Google listing screenshot.
+</p>
+
+<br>
+
+<a class="btn primary"
+href="https://www.google.com/maps/search/?api=1&query=R.D.%20Pathology%20Collection%20Centre%2C%20451%20Purba%20Sinthi%2C%20Dum%20Dum"
+target="_blank">
+
+View on Google Maps ↗
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- GALLERY -->
+
+<section id="gallery">
+
+<div class="container">
+
+<div class="section-title">
+
+<span>Photo Gallery</span>
+
+<h2>See the Centre.</h2>
+
+</div>
+
+
+<div class="gallery">
+
+
+<div class="gallery-main">
+
+<img src="storefront.jpg"
+alt="R.D. Pathology Collection Centre storefront">
+
+</div>
+
+
+<div class="gallery-side">
+
+<!-- YOUR ACTUAL FILE -->
+
+<img src="source-2.jpg"
+alt="R.D. Pathology Collection Centre photo">
+
+
+<!-- YOUR ACTUAL FILE -->
+
+<img src="contact-details.jpg"
+alt="R.D. Pathology Centre contact details">
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- EXTRA PHOTO -->
+
+<section>
+
+<div class="container">
+
+<div class="section-title">
+
+<span>More Information</span>
+
+<h2>Centre Details</h2>
+
+</div>
+
+<div class="card">
+
+<img src="source-3.jpg"
+alt="R.D. Pathology Collection Centre additional information"
+style="width:100%;border-radius:20px;display:block;">
+
+</div>
+
+</div>
+
+</section>
+
+
+<!-- CTA -->
+
+<section>
+
+<div class="container">
+
+<div class="cta">
+
+<div>
+
+<h2>Need to find us?</h2>
+
+<p>
+Call the centre or open directions before your visit.
+</p>
+
+</div>
+
+
+<div class="buttons">
+
+<a class="btn" href="tel:09051583904">
+☎ Call Now
+</a>
+
+<a class="btn"
+href="https://www.google.com/maps/search/?api=1&query=451%20Purba%20Sinthi%2C%20Dum%20Dum%2C%20South%20Dumdum%2C%20West%20Bengal%20700030"
+target="_blank">
+
+📍 Directions
+
+</a>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+</main>
+
+
+<!-- FOOTER -->
+
+<footer>
+
+<div class="container">
+
+<strong>
+R.D. PATHOLOGY COLLECTION CENTRE
+</strong>
+
+<br>
+
+<small>
+451, Purba Sinthi, Dum Dum, South Dumdum,
+West Bengal 700030
+</small>
+
+<br><br>
+
+<small>
+© 2026 R.D. Pathology Collection Centre
+</small>
+
+</div>
+
+</footer>
+
+
+<!-- MOBILE BUTTONS -->
+
+<div class="mobile-buttons">
+
+<a href="tel:09051583904">
+☎ Call
+</a>
+
+<a href="https://www.google.com/maps/search/?api=1&query=451%20Purba%20Sinthi%2C%20Dum%20Dum%2C%20South%20Dumdum%2C%20West%20Bengal%20700030"
+target="_blank">
+
+📍 Directions
+
+</a>
+
+</div>
+
+
+</body>
+  </html>
